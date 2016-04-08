@@ -1,0 +1,28 @@
+.center {
+  display: block;
+  margin: 0 auto;  
+}
+
+.fifty-width {
+  width: 50%;
+}
+
+.space-letters {
+  letter-spacing: 5px;
+}
+
+.time {
+  font-size: 20vh;
+  text-align: center;
+}
+
+#home {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+#home-img {
+  width: 8%;
+  height: 8%;
+}

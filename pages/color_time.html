@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Time</title>
+  
+  <!-- favicon -->
+  <link rel="shortcut icon" type="image/png" href="../img/ca.png"/>
+  
+  <!-- bootstrap css -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    
+  <!-- bootstrap js -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  
+  <!-- custom css -->
+  <link rel="stylesheet" href="../css/color_time.css">
+  
+  <!-- custom js -->
+  <script src="../js/color_time.js" charset="utf-8"></script>
+  
+</head>
+<body>
+  
+  <div class="container">
+    
+    <div id="home">
+      <a href="../index.html"><img id="home-img" src="../img/home.png" alt="home"></a>
+    </div>
+    
+    <div class="btn btn-success center space-letters fifty-width" onclick="changeBackgroundColor()">Change color!</div>
+    
+    <div id="time-div" class="center time"></div>
+    
+    <div id="toggle-btn" class="btn btn-success center space-letters fifty-width" onclick="toggleInterval()">Stop Changing Colors!</div>
+    
+  </div>
+  
+</body>
+</html>
