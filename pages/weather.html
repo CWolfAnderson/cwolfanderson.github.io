@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Weather</title>
+  
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  
+  <!-- animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+  
+  <link rel="stylesheet" href="../css/weather.css">
+  
+  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
+  <script src="../js/weather.js" charset="utf-8"></script>
+</head>
+<body>
+  
+  <div class="container">
+    
+    <div id="weather-data">
+      <h2 id="city-name"></h2>
+      <p id="description"></p>
+      <p id="temp"></p>
+      <p id="sun"></p>
+    </div>
+    
+    <div id="input-area" class="input-group">
+      <input id="input-box" type="text" class="form-control" placeholder="City">
+      <span class="input-group-btn">
+        <button id="search-btn" class="btn btn-default" type="button">Search!</button>
+      </span>
+    </div><!-- /input-group -->
+    
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-76396534-1', 'auto');
+  ga('send', 'pageview');
+  
+  </script>
+  
+</body>
+</html>

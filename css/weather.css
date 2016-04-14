@@ -1,0 +1,22 @@
+body {
+  background-image: url("https://images.unsplash.com/photo-1422393462206-207b0fbd8d6b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=ac3dcc36ecded066d44617b34b3e940b");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#input-area {
+  position: relative;
+  width: 300px;
+  top: 200px;
+  margin: 0 auto;
+}
+
+#weather-data {
+  position: relative;
+  top: 100px;
+  text-align: center;
+}
+
+#sun {
+    white-space: pre;
+}
