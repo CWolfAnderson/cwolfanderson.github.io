@@ -1,0 +1,158 @@
+body {
+  box-sizing: border-box;
+  background-image: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+}
+
+#mario {
+  height: 70px;
+  position: relative;
+  top: 45vh;
+  left: 100px;
+  z-index: 1;
+}
+
+audio {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: black;
+}
+
+#logo {
+  height: 60px;
+  left: 30px;
+  top: 20px;
+  position: fixed;
+}
+
+#scoreboard {
+  position: fixed;
+  border-radius: 10px;
+  background-color: #00b400;
+  border: 1px solid black;
+  top: 100px;
+  left: 30px;
+  height: 30%;
+  width: 8%;
+  overflow: scroll;    
+  text-align: center;
+  padding-top: 8px;
+}
+
+#num-bubbles {
+  width: 50px;
+  font-size: 110%;
+  text-align: center;
+  border-radius: 4px;
+}
+
+#bubbles-popped {
+  margin-top: 5px;
+}
+
+#scoreboard::-webkit-scrollbar { 
+  display: none;
+}
+
+#signature {
+  bottom: 0;
+  right: 10px;
+  color: white;
+  font-size: 20px;
+  position: fixed;
+  text-shadow: 2px 1px 3px #f200ff;
+}
+
+#menu {
+  font-size: 110%;
+  width: 50%;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+}
+
+#play-btn {
+  display: inline-block;
+  margin-left: 15px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: #00b400;
+  color: white;
+  font-size: 110%;
+}
+
+.bubble {
+  height: 80px;
+  width: 80px;
+  text-align: center;  
+  font-size: 30px;  
+  border: 0 solid white;
+  border-radius: 50%;
+  background-image: url("../img/bubble.png");
+  background-size: contain;
+  opacity: 0.8;
+}
+
+.difficulty {
+  margin: 0 10px;
+}
+
+.number {
+  line-height: 80px;
+  color: #3783a3;
+}
+
+.fizz {
+  line-height: 80px;
+  color: #4effef;
+}
+
+.buzz {
+  line-height: 80px;
+  color: #4eb5ff;
+}
+
+.fizzbuzz {
+  color: #4eff7a;
+}
+
+.text-white {
+  color: white;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  
+  20% {
+    transform: translate(12px, -200px);
+    opacity: 0.6;
+  }
+  
+  40% {
+    transform: translate(-14px, -400px);
+    opacity: 1;
+  }
+  
+  60% {
+    transform: translate(14px, -600px);
+  }
+  80% {
+    transform: translate(12px, -800px);
+    opacity: 0.9
+  }
+  
+  100% {
+    transform: translate(-11px, -1400px);
+    display: none;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 5s linear 1 forwards;
+}
