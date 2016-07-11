@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Fizz Buzz</title>
+  
+  <link rel="icon" href="img/fb_logo.png">
+  
+  <link rel="stylesheet" href="css/styles.css">  
+  
+  <script src="js/scripts.js" charset="utf-8"></script>  
+</head>
+<body>
+  
+  <a href="index.html"><img id="logo" src="img/fb_logo.png" alt="Fizz Buzz"></a>
+  
+  <img id="mario" src="img/mario_right.gif" alt="mario">
+  
+  <audio controls loop autoplay id="background-music">
+    <source src="audio/background_music.mp3" type="audio/ogg"/>
+    Your browser does not support the audio element.
+  </audio>
+  
+  <div id="scoreboard">
+    <u>Score: <span id="score"></span></u>
+    <p id="bubbles-popped"></p>
+  </div>
+  
+  <div id="menu">
+    <p>Use the arrow keys to move Mario around & collect bubbles!</p>
+    <p>Numbers: 1pt | Fizz: 2pt | Buzz: 3pt | FizzBuzz: 5pt</p>
+    <p>
+      <span class="difficulty">Easy: <input type="radio" name="difficulty" value="7" checked></span>
+      <span class="difficulty">Medium: <input type="radio" name="difficulty" value="5"></span>
+      <span class="difficulty">Hard: <input type="radio" name="difficulty" value="3"></span>
+    </p>
+    Number of Bubbles: <input id="num-bubbles" type="number" autofocus value="15" min="1">
+    <button id="play-btn" onclick="startGame()">play</button>
+  </div>
+  
+  <audio id="bubble-pop-sound" src="audio/bubble_pop.mp3"></audio>
+  
+  <p id="signature"><a class="text-white" href="https://github.com/cwolfanderson">by Christoph Anderson</a></p>
+  
+</body>
+</html>
