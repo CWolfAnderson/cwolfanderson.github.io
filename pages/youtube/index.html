@@ -20,15 +20,19 @@
     let request = gapi.client.youtube.search.list({
       q: q,
       part: 'snippet',
-      maxResults: 50
+      maxResults: 10,
+      order: 'viewCount'
     });
     
+    
     request.execute(function(response) {
-            
+      let toDisplay = '';
+      
       let resultItems = response.result.items;
-            
+      
+      
       resultItems.forEach((item, index) => {
-
+        
         let vidId = response.items[index].id.videoId;
         
         let url = 'https://www.googleapis.com/youtube/v3/videos?part=contentDetails,statistics&key=AIzaSyCWzGO9Vo1eYOW4R4ooPdoFLmNk6zkc0Jw&id=' + vidId;
@@ -42,35 +46,52 @@
           let dislikeCount = stats.dislikeCount;
           let commentCount = stats.commentCount;
           
-          let vidTitle = item.snippet.title;
+          let vidTitle = `<h3>${item.snippet.title}</h3>`;
           
           let vidThumburl =  item.snippet.thumbnails.high.url;
           let vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No  Image Available." style="width:204px;height:128px"></pre>';
-          let statsDiv = `
-          <p>
-          View Count: ${viewCount}<br />
-          Like Count: ${likeCount}<br />
-          Dislike Count: ${dislikeCount}<br />
-          Comment Count: ${commentCount}
+          let statsDiv = `<p>
+          <strong>View Count:</strong> ${numberWithCommas(viewCount)}<br />
+          <strong>Like Count:</strong> ${numberWithCommas(likeCount)}<br />
+          <strong>Dislike Count:</strong> ${numberWithCommas(dislikeCount)}<br />
+          <strong>Comment Count:</strong> ${numberWithCommas(commentCount)}
           </p>`;
           
-          $('#results').append('<pre>' + vidTitle + vidThumbimg + statsDiv + '</pre>');
+          // $('#results').append('<pre>' + vidTitle + vidThumbimg + statsDiv + '</pre>');
+          toDisplay += '<pre>' + vidTitle + vidThumbimg + statsDiv + '</pre>';
+          // toDisplay += 'poop';
+        }).then(() => {
+
+          $('#results').html(toDisplay);
+          
         });
         
       });
-    });
+      
+      // $('#results').empty();
+      
+    });    
+    
   }
   
   function init() {
     gapi.client.setApiKey('AIzaSyCWzGO9Vo1eYOW4R4ooPdoFLmNk6zkc0Jw');
     gapi.client.load('youtube', 'v3', function() {
+      $('#results').empty();
+      $('#results').html(
+        '<img src=loading.gif />'
+      );
       let term = $('#query').val();
       makeRequest(term);
     });
   }
   
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+  
   </script>
   
-  <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=init"></script>
+  <script type="text/javascript" src="https://apis.google.com/js/client.js"></script>
 </body>
 </html>
