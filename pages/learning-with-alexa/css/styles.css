@@ -1,0 +1,39 @@
+body {
+  background: #2e2e2e;
+  color: #f0f0f0; }
+
+#icon {
+  height: 100px;
+  margin-top: -60px;
+  margin-right: 20px; }
+
+#title {
+  font-size: 425%;
+  margin-top: 20px;
+  text-align: center; }
+
+#score {
+  font-size: 1500%;
+  margin-top: -33px; }
+
+#wins {
+  color: #1ebb20; }
+
+#losses {
+  color: #a21c1c; }
+
+#question-container {
+  font-size: 225%;
+  margin-top: 20px; }
+
+#tof {
+  font-size: 200%;
+  margin-bottom: 15px;
+  margin-top: -33px;
+  text-align: center; }
+
+#question {
+  font-size: 320%;
+  text-align: center; }
+
+/*# sourceMappingURL=styles.css.map */

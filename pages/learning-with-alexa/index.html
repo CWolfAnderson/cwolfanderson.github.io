@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>True or False</title>
+  
+  <!-- Favicon -->
+  <!-- Created by Symbolon from TheNounProject -->
+  <link rel="icon" href="img/icon.png">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="lib/animate.css">
+  
+  <!-- Bootstrap (Bootswatch) CSS -->
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-cyborg.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+</head>
+<body>
+  
+  <div class="container">
+    
+    <div id="question-container"><span id="question-number"></span></div>
+    <div id="title"><img src="img/icon.png" alt="Icon" id="icon">Learning with Alexa</div>
+    <div id="score-container"></div>
+    <div id="tof">True or False?</div>
+    <div id="question"></div>
+    
+  </div> <!-- / .container -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- jQuery -->
+  <script src="lib/jquery/jquery-3.1.1.min.js" charset="utf-8"></script>
+  
+  <!-- Bootstrap JS -->
+  <script src="lib/bootstrap/js/bootstrap.min.js" charset="utf-8"></script>
+  
+  <!-- Firebase JS -->
+  <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="js/scripts.js" charset="utf-8"></script>
+</body>
+</html>

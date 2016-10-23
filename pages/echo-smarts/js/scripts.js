@@ -19,12 +19,22 @@ $(function() {
     // console.log(snapshot);
     // console.log(snapshot.val());        
     
+    console.log(snapshot.val());
+    
     $('#facts').prepend(`
       <p>
-      <strong>${snapshot.val().fact}:</strong>
+      ${snapshot.val().timestamp}: <strong>${snapshot.val().fact}</strong>
       </p>
       `);
       
+    });
+    
+    document.getElementById('add-shiz-btn').addEventListener('click', function() {
+      
+      database.ref('facts').push({
+        fact: 'My shit bang.'
+      });
+      alert('Added');
     });
     
   });
