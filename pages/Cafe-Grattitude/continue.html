@@ -75,7 +75,7 @@
           e.preventDefault();
           let email = $('#mce-EMAIL').val();
           let url = 'http://cors.io/?http://us4.api.mailchimp.com/3.0/lists/5da0d68241/members/';
-          let obj = {
+          let data = {
             "email_address": email,
             "status": "subscribed",
             "merge_fields": {
@@ -83,9 +83,14 @@
               "LNAME": "Last Name"
             }
           }
-          $.post(url, obj, (data, status, xhr) => {
-            console.log(status);
+          
+          $.ajax({
+            method: 'POST',
+            url,
+            data,
+            dataType: 'jsonp'
           });
+          
         });
         </script>
         
