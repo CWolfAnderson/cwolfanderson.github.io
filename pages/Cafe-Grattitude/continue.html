@@ -37,7 +37,15 @@
         We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
         </style>
         <div id="mc_embed_signup">
-          <form action="//cafegratitudela.us4.list-manage.com/subscribe/post?u=d7827ba037d32e3808c640537&amp;id=5da0d68241" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <!-- <form action="//cafegratitudela.us4.list-manage.com/subscribe/post?u=d7827ba037d32e3808c640537&amp;id=5da0d68241" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate> -->
+          <?php session_start(); // place it on the top of the script ?>
+          <?php
+          $statusMsg = !empty($_SESSION['msg'])?$_SESSION['msg']:'';
+          unset($_SESSION['msg']);
+          echo $statusMsg;
+          ?>
+          
+          <form method="post" action="action.php">
             <div id="mc_embed_signup_scroll">
               <div class="mc-field-group">
                 <label for="mce-EMAIL">Email Address
