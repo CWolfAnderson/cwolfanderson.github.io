@@ -74,7 +74,7 @@
         $('#mc-embedded-subscribe').click(e => {
           e.preventDefault();
           let email = $('#mce-EMAIL').val();
-          let url = 'http://cors.io/?http://us4.api.mailchimp.com/3.0/lists/5da0d68241/members/';
+          let url = 'http://us4.api.mailchimp.com/3.0/lists/5da0d68241/members/';
           let data = {
             "email_address": email,
             "status": "subscribed",
