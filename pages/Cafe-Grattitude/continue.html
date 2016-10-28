@@ -89,7 +89,13 @@
             type: 'POST',
             url: url,
             data: strData,
-            dataType: 'jsonp'
+            dataType: 'jsonp',
+            error: function(err) {
+              console.log(err);
+            },
+            success: function() {
+              console.log('finally!');
+            }
           });
           
         });
