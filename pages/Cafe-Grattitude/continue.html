@@ -86,8 +86,8 @@
           
           $.ajax({
             type: 'POST',
-            url,
-            data,
+            url: url,
+            data: data.serialize(),
             dataType: 'jsonp'
           });
           
