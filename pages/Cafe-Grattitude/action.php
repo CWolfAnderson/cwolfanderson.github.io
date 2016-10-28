@@ -50,4 +50,4 @@ if(isset($_POST['submit'])){
     }
 }
 // redirect to homepage
-header('location:index.php');
+header('location:http://cafegratitude.com/');
