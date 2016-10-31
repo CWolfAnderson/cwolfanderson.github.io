@@ -41,6 +41,7 @@ function saveEmail() {
 
 $.ajax({
   "url": url,
+  "method": "POST",
   "data": $('#email-form').serialize(),
   "dataType": 'jsonp'
 }).done(function() {
