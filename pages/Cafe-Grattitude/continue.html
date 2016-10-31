@@ -25,26 +25,34 @@ function saveEmail() {
   // });
   alert('Saving email');
   let email = $('#email').val();
-  let url = 'https://us4.api.mailchimp.com/3.0/lists/5da0d68241/members/';
-  $.post(url,
-    {
-      "email_address": email,
-      "status": "subscribed",
-      "merge_fields": {
-        "FNAME": "Urist",
-        "LNAME": "McVankab"
-      }
-    }
-  ).done(function() {
-    alert('done posting');
-  })
-  .fail(function(err) {
-    alert(err);
-  })
-  .always(function() {
-    alert('finished');
-  });
+  let url = 'https://us4.api.mailchimp.com/3.0/lists/5da0d68241/members/&c=?';
+  // let url = 'https://us4.api.mailchimp.com/3.0/lists/5da0d68241/members/&c=?';
   
+  /*
+  "data": {
+  "email_address": email,
+  "status": "subscribed",
+  "merge_fields": {
+  "FNAME": "Urist",
+  "LNAME": "McVankab"
+}
+},
+*/
+
+$.ajax({
+  "url": url,
+  "data": $('#email-form').serialize(),
+  "dataType": 'jsonp'
+}).done(function() {
+  alert('done posting');
+})
+.fail(function(err) {
+  console.log(err);
+})
+.always(function() {
+  alert('finished');
+});
+
 }
 </script>
 
@@ -62,12 +70,13 @@ function saveEmail() {
         
         <form id="email-form">
           
-          <input id="email" class="email" name="email" type="email" placeholder="Email" required autofocus><br>
+          <input id="email" class="email" name="email_address" type="email" placeholder="Email" required autofocus><br>
           
           <p id="terms-and-conditions">
             For complimentary guest Wi-Fi access, please enter in your email address.<br>
             By entering your email address you are opting in to our email club and agree to our <a href="http://cafegratitude.com/wp-content/uploads/2016/10/CG-Thanksgiving-Pies-Order-Sheet-2016-Sheet1.pdf">Terms and Conditions</a>
             <input name="t-and-c-checkbox" type="checkbox" required>
+            <input name="status" type="text">
           </p>
           
           <a id="continue-btn" class="button" href="#" title="Continue to the Internet" onclick="saveEmail()">$MERAKI:CONTINUE_TO_THE_INTERNET$</a>
