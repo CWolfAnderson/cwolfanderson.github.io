@@ -24,34 +24,28 @@ function saveEmail() {
   //   dataType: 'jsonp',
   // });
   alert('Saving email');
-  let email = $('#email').val();
   // let url = 'https://us4.api.mailchimp.com/3.0/lists?id=5da0d68241&c=?';
   // let url = 'https://us4.api.mailchimp.com/3.0/lists/5da0d68241/members/&c=?';
   let url = 'http://cafegratitudela.us4.list-manage.com/subscribe/post-json?u=d7827ba037d32e3808c640537&amp;id=5da0d68241&c=?';
-  /*
-  "data": {
-  "email_address": email,
-  "status": "subscribed",
-  "merge_fields": {
-  "FNAME": "Urist",
-  "LNAME": "McVankab"
-}
-},
-*/
 
 $.ajax({
-  "url": url,
-  "method": "POST",
-  "data": $('#email-form').serialize(),
-  "dataType": 'jsonp'
-}).done(function() {
-  alert('done posting');
+  type: "GET",
+  url: url,
+  data: $('#email-form').serialize(),
+  cache: false,
+  dataType: "jsonp",
+  jsonp: "c", // trigger MailChimp to return a JSONP response
+  contentType: "application/json; charset=utf-8"
+}).done(function(res) {
+  console.log('done posting');
+  console.log(res);
 })
 .fail(function(err) {
+  console.log('error');
   console.log(err);
 })
 .always(function() {
-  alert('finished');
+  console.log('finished');
 });
 
 }
