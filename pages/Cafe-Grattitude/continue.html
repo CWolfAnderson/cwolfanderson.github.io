@@ -38,12 +38,12 @@
           <input name="t-and-c-checkbox" type="checkbox" required>
         </p>
         
-        <a id="continue-btn" class="button" href="#" title="Continue to the Internet" onclick="saveEmail()">$MERAKI:CONTINUE_TO_THE_INTERNET$</a>
+        <a id="continue-btn" class="button" href="#" title="Continue to the Internet">$MERAKI:CONTINUE_TO_THE_INTERNET$</a>
         <!-- <a id="continue-btn" class="button" href="$MERAKI:AUTH_AND_CONTINUE_URL$" title="Continue to the Internet" onclick="saveEmail()">$MERAKI:CONTINUE_TO_THE_INTERNET$</a> -->
         
-        <div>
+        <!-- <div>
           <input type="submit" value="Keep Me Updated" name="subscribe">
-        </div>
+        </div> -->
         
       </form>
       
@@ -62,18 +62,18 @@ $MERAKI:MERAKI_JS$
 <script type="text/javascript">
 
 $(document).ready(function(){
-  ajaxMailChimpForm($("#subscribe-form"));
+  // ajaxMailChimpForm($("#subscribe-form"));
+  // 
+  // function ajaxMailChimpForm($form){
+  //   
+  //   $form.submit(function(e) {
+  //     e.preventDefault();
+  //     submitSubscribeForm($form);
+  //   });
+  //   
+  // }
   
-  // Turn the given MailChimp form into an ajax version of it.
-  function ajaxMailChimpForm($form){
-    
-    // Hijack the submission. We'll submit the form manually.
-    $form.submit(function(e) {
-      e.preventDefault();
-      submitSubscribeForm($form);
-    });
-    
-  }
+  $('#continue-btn').click(submitSubscribeForm($('#subscribe-form')));
   
   function submitSubscribeForm($form) {
     $.ajax({
