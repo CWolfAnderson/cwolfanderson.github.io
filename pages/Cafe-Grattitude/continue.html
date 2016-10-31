@@ -74,26 +74,25 @@ $(document).ready(function(){
     });
     
   }
-});
-
-function submitSubscribeForm($form) {
-  $.ajax({
-    type: "GET",
-    url: $form.attr("action"),
-    data: $form.serialize(),
-    cache: false,
-    dataType: "jsonp",
-    jsonp: "c",
-    contentType: "application/json; charset=utf-8",
-    error: function(error){
-      console.log(error);
-    },
-    success: function(data){
-      console.log(data);
-    }
-  });
-}
-
+  
+  function submitSubscribeForm($form) {
+    $.ajax({
+      type: "GET",
+      url: $form.attr("action"),
+      data: $form.serialize(),
+      cache: false,
+      dataType: "jsonp",
+      jsonp: "c",
+      contentType: "application/json; charset=utf-8",
+      error: function(error){
+        console.log(error);
+      },
+      success: function(data){
+        console.log(data);
+      }
+    });
+  }
+  
 });
 
 </script>
