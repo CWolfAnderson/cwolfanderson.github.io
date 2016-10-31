@@ -27,7 +27,7 @@
         
         <form
         id="subscribe-form"
-        action="http://cafegratitudela.us4.list-manage.com/subscribe/post-json?u=d7827ba037d32e3808c640537&amp;id=5da0d68241"
+        action="http://cafegratitudela.us4.list-manage.com/subscribe/post-json?u=d7827ba037d32e3808c640537&amp;id=18389b2648"
         method="get">
         
         <input id="email" class="email" name="EMAIL" type="email" placeholder="Email" required autofocus><br>
@@ -40,21 +40,16 @@
         
         <a id="continue-btn" class="button" href="#" title="Continue to the Internet">$MERAKI:CONTINUE_TO_THE_INTERNET$</a>
         <!-- <a id="continue-btn" class="button" href="$MERAKI:AUTH_AND_CONTINUE_URL$" title="Continue to the Internet" onclick="saveEmail()">$MERAKI:CONTINUE_TO_THE_INTERNET$</a> -->
-        
-        <!-- <div>
-          <input type="submit" value="Keep Me Updated" name="subscribe">
-        </div> -->
-        
-      </form>
       
-    </div> <!-- end continue -->
+    </form>
     
-  </div> <!-- end container -->
+  </div> <!-- end continue -->
   
+</div> <!-- end container -->
+
 </div> <!-- end parent -->
 
 $MERAKI:MERAKI_JS$
-
 
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -62,16 +57,6 @@ $MERAKI:MERAKI_JS$
 <script type="text/javascript">
 
 $(document).ready(function(){
-  // ajaxMailChimpForm($("#subscribe-form"));
-  // 
-  // function ajaxMailChimpForm($form){
-  //   
-  //   $form.submit(function(e) {
-  //     e.preventDefault();
-  //     submitSubscribeForm($form);
-  //   });
-  //   
-  // }
   
   $('#continue-btn').click(function() {
     let $form = $('#subscribe-form');
