@@ -35,7 +35,15 @@ function saveEmail() {
         "LNAME": "McVankab"
       }
     }
-  );
+  ).done(function() {
+    alert('done posting');
+  })
+  .fail(function(err) {
+    alert(err);
+  })
+  .always(function() {
+    alert('finished');
+  });
   
 }
 </script>
