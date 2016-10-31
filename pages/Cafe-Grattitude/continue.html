@@ -25,7 +25,7 @@ function saveEmail() {
   // });
   alert('Saving email');
   let email = $('#email').val();
-  let url = 'https://us4.api.mailchimp.com/3.0/lists/5da0d68241/members/&c=?';
+  let url = 'https://us4.api.mailchimp.com/3.0/lists?id=5da0d68241&c=?';
   // let url = 'https://us4.api.mailchimp.com/3.0/lists/5da0d68241/members/&c=?';
   
   /*
@@ -75,7 +75,7 @@ $.ajax({
           <p id="terms-and-conditions">
             For complimentary guest Wi-Fi access, please enter in your email address.<br>
             By entering your email address you are opting in to our email club and agree to our <a href="http://cafegratitude.com/wp-content/uploads/2016/10/CG-Thanksgiving-Pies-Order-Sheet-2016-Sheet1.pdf">Terms and Conditions</a>
-            <input name="t-and-c-checkbox" type="checkbox" required>
+            <!-- <input name="t-and-c-checkbox" type="checkbox" required> -->
             <input name="status" type="text">
           </p>
           
