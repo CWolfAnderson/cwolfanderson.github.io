@@ -73,9 +73,8 @@ $(document).ready(function(){
   //   
   // }
   
-  $('#continue-btn').click(submitSubscribeForm($('#subscribe-form')));
-  
-  function submitSubscribeForm($form) {
+  $('#continue-btn').click(function($form) {
+    let $form = $('#subscribe-form');
     $.ajax({
       type: "GET",
       url: $form.attr("action"),
@@ -91,7 +90,7 @@ $(document).ready(function(){
         console.log(data);
       }
     });
-  }
+  });
   
 });
 
