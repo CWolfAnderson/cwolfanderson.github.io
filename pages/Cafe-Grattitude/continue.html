@@ -25,6 +25,7 @@
         
         <img id="splash" src="#" alt="Cafe Gratitude" />
         
+        <!-- Cafe Gratitude Los Angeles Newsletter -->
         <form id="subscribe-form"
         action="http://cafegratitudela.us4.list-manage.com/subscribe/post-json?u=d7827ba037d32e3808c640537&amp;id=18389b2648" method="get">
         
@@ -37,8 +38,7 @@
         </p>
         
         <a id="continue-btn" class="button" href="#" title="Continue to the Internet">$MERAKI:CONTINUE_TO_THE_INTERNET$</a>
-        <!-- <a id="continue-btn" class="button" href="$MERAKI:AUTH_AND_CONTINUE_URL$" title="Continue to the Internet" onclick="saveEmail()">$MERAKI:CONTINUE_TO_THE_INTERNET$</a> -->
-        
+          
       </form>
       
     </div> <!-- end continue -->
@@ -52,12 +52,13 @@ $MERAKI:MERAKI_JS$
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
-<script type="text/javascript">
+<script>
 
 $(document).ready(function(){
   
   $('#continue-btn').click(function() {
     let $form = $('#subscribe-form');
+    
     $.ajax({
       type: "GET",
       url: $form.attr("action"),
@@ -73,6 +74,7 @@ $(document).ready(function(){
         console.log(data);
       }
     });
+    
   });
   
 });
