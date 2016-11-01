@@ -83,7 +83,9 @@
         }
       });
       
-      window.location = '$MERAKI:CONTINUE_TO_THE_INTERNET$';
+      setTimeout(function() {
+        window.location = '$MERAKI:CONTINUE_TO_THE_INTERNET$';
+      }, 2000);
       
     });
     
