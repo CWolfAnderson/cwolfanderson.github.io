@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="text/html; charset=UTF-8">
+  
+  <title>$MERAKI:NETWORK_NAME$</title>
+  
+  <link rel="stylesheet" href="main.css">
+  
+  <!-- /*<style type="text/css" media="screen">
+  $MERAKI:INLINE_MAIN_CSS$
+</style>*/ -->
+
+</head>
+
+<body>
+  
+  <div id="parent">
+    
+    <div id="container">
+      
+      <div id="continue">
+        
+        <img id="splash" src="#" alt="Cafe Gratitude">
+        
+        <form
+        id="subscribe-form"
+        action="http://cafegratitudela.us4.list-manage.com/subscribe/post?u=d7827ba037d32e3808c640537&amp;id=18389b2648"
+        method="get">
+        
+        <input id="email" class="email" name="EMAIL" type="email" placeholder="Email" required autofocus><br>
+        
+        <p id="terms-and-conditions">
+          For complimentary guest Wi-Fi access, please enter in your email address.<br>
+          By entering your email address you are opting in to our email club and agree to our <a href="http://cafegratitude.com/wp-content/uploads/2016/10/CG-Thanksgiving-Pies-Order-Sheet-2016-Sheet1.pdf">Terms and Conditions</a>
+          <input name="t-and-c-checkbox" type="checkbox" required>
+        </p>
+        
+        <a id="continue-btn" class="button" href="#" title="Continue to the Internet">$MERAKI:CONTINUE_TO_THE_INTERNET$</a>
+        <!-- <a id="continue-btn" class="button" href="$MERAKI:AUTH_AND_CONTINUE_URL$" title="Continue to the Internet" onclick="saveEmail()">$MERAKI:CONTINUE_TO_THE_INTERNET$</a> -->
+        
+        <!-- <div>
+          <input type="submit" value="Keep Me Updated" name="subscribe">
+        </div> -->
+        
+      </form>
+      
+    </div> <!-- end continue -->
+    
+  </div> <!-- end container -->
+  
+</div> <!-- end parent -->
+
+$MERAKI:MERAKI_JS$
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+  // ajaxMailChimpForm($("#subscribe-form"));
+  // 
+  // function ajaxMailChimpForm($form){
+  //   
+  //   $form.submit(function(e) {
+  //     e.preventDefault();
+  //     submitSubscribeForm($form);
+  //   });
+  //   
+  // }
+  
+  $('#continue-btn').click(function() {
+    let $form = $('#subscribe-form');
+    $.ajax({
+      type: "GET",
+      url: $form.attr("action"),
+      data: $form.serialize(),
+      cache: false,
+      dataType: "jsonp",
+      jsonp: "c",
+      contentType: "application/json; charset=utf-8",
+      error: function(error){
+        console.log(error);
+      },
+      success: function(data){
+        console.log(data);
+      }
+    });
+  });
+  
+});
+
+</script>
+</body>
+</html>
