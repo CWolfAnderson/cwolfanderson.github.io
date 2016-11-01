@@ -27,9 +27,9 @@
         
         <!-- Cafe Gratitude Los Angeles Newsletter -->
         <form id="subscribe-form" action="http://cafegratitudela.us4.list-manage.com/subscribe/post-json?u=d7827ba037d32e3808c640537&amp;id=18389b2648" method="get">
-        
-        <!-- Cafe Gratitude Newsletter -->
-        <!-- <form id="subscribe-form" action="http://cafegratitudela.us4.list-manage.com/subscribe/post-json?u=d7827ba037d32e3808c640537&amp;id=dbf7a66482" method="get"> -->
+          
+          <!-- Cafe Gratitude Newsletter -->
+          <!-- <form id="subscribe-form" action="http://cafegratitudela.us4.list-manage.com/subscribe/post-json?u=d7827ba037d32e3808c640537&amp;id=dbf7a66482" method="get"> -->
           
           <input id="email" class="email" name="EMAIL" type="email" placeholder="Email" required autofocus><br>
           
@@ -39,8 +39,9 @@
             <input type="checkbox" required>
           </p>
           
-          <!-- <a id="continue-btn" class="button" href="#" title="Continue to the Internet">$MERAKI:CONTINUE_TO_THE_INTERNET$</a> -->
-          <input type="submit" id="continue-btn" class="button" title="Continue to the Internet" value="$MERAKI:CONTINUE_TO_THE_INTERNET$" />
+          <a id="continue-btn" class="button" href="#" title="Continue to the Internet">$MERAKI:CONTINUE_TO_THE_INTERNET$</a>
+          
+          <!-- <input type="submit" id="continue-btn" class="button" title="Continue to the Internet" value="$MERAKI:CONTINUE_TO_THE_INTERNET$" /> -->
           
         </form>
         
@@ -74,11 +75,11 @@
         jsonp: "c",
         contentType: "application/json; charset=utf-8",
         error: function(error){
-          console.log('error');
+          console.log('error function called');
           console.log(error);
         },
         success: function(data){
-          console.log('success');
+          console.log('success function called');
           console.log(data);
         }
       });
