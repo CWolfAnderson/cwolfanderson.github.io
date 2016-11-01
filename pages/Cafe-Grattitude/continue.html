@@ -59,10 +59,7 @@
   
   $(document).ready(function(){
     
-    $('#continue-btn').click(function(e) {
-      
-      e.preventDefault();
-      
+    $('#continue-btn').click(function() {
       let $form = $('#subscribe-form');
       
       $.ajax({
@@ -82,8 +79,6 @@
           console.log(data);
         }
       });
-      
-      window.location = '$MERAKI:CONTINUE_TO_THE_INTERNET$';
       
     });
     
